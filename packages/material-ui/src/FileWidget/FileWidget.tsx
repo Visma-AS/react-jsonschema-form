@@ -104,6 +104,8 @@ function extractFileInfo(dataURLs: any[]) {
     });
 }
 
+const NOT_ALLOWED_FILE_NAME_CHARACTERS = ['*', '"', '/', '\\', '<', '>', ':', '|', '?'];
+
 const FileWidget = ({
   id,
   options,
@@ -185,6 +187,21 @@ const FileWidget = ({
           return isAccepted;
         });
       }
+
+      filesInfo = filesInfo.filter((fileInfo: any) => {
+        const isAccepted = !NOT_ALLOWED_FILE_NAME_CHARACTERS.some(char => fileInfo.name.includes(char));
+        if (!isAccepted) {
+          alert(
+            intl.formatMessage(
+              {
+                defaultMessage: 'File "{name}" is not accepted. Filename cannot contain following characters: {characters}'
+              },
+              { name: fileInfo.name, characters: NOT_ALLOWED_FILE_NAME_CHARACTERS.join(' ') }
+            )
+          )
+        }
+        return isAccepted;
+      })
 
       setState(filesInfo);
       const values = filesInfo.map((fileInfo: any) => fileInfo.dataURL);

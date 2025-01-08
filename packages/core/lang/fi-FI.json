@@ -26,6 +26,9 @@
   "YZMoKC": {
     "defaultMessage": "Tiedosto \"{name}\" ei ole sallittu. Tiedoston enimmäiskoko on {size}."
   },
+  "MzG5Gx": {
+    "defaultMessage": "Tiedosto \"{name}\" ei ole sallittu. Tiedostonimi ei voi sisältää seuraavia merkkejä: {characters}"
+  },
   "wSZR47": {
     "defaultMessage": "Lähetä"
   },

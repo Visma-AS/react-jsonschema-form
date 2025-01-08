@@ -50,6 +50,9 @@
   "YZMoKC": {
     "defaultMessage": "Filen \"{name}\" accepteras inte. Den maximala filstorleken är {size}."
   },
+  "MzG5Gx": {
+    "defaultMessage": "Filen \"{name}\" accepteras inte. Filnamnet får inte innehålla följande tecken: {characters}"
+  },
   "vJPbhT": {
     "defaultMessage": "Element per sida:"
   },
